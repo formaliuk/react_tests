@@ -22,3 +22,12 @@ test('should render completed todo', () => {
     expect(todoEl).toHaveTextContent('wash car');
     expect(todoEl).toContainHTML('<div data-testid="todo-2"><strike><h1>wash car</h1></strike></div>');
 })
+
+test('should render completed todo', () => {
+    const todo = {id: 3, title: 'cook dinner', completed: false};
+    render(<ToDo todo={todo}/>);
+    const todoEl = screen.getByTestId('todo-3');
+    expect(todoEl).toBeInTheDocument();
+    expect(todoEl).toHaveTextContent('cook dinner');
+    expect(todoEl).not.toContainHTML('<div data-testid="todo-2"><strike><h1>cook dinner</h1></strike></div>');
+})
