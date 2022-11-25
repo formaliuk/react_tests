@@ -24,8 +24,6 @@ jobs:
 
       - name: 🤖 npm install
         run: npm install
-        
-      - run: npm audit
 
       - name: 🧪 Run tests and count lines
         run: npm test
